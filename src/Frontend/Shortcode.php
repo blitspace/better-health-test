@@ -8,6 +8,9 @@ class Shortcode {
     }
 
     public function render_shortcode($atts, $content = null) {
-        return '<div class="betterhealth-shortcode"><strong>Hello, World!</strong></div>';
+        return '<section>'
+            . '<div class="betterhealth-shortcode"><strong>Hello, World!</strong></div>'
+            . '<div id="betterhealth-react-app"></div>'
+            . '</section>';
     }
 }

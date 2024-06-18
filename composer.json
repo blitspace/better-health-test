@@ -1,11 +1,11 @@
 {
-  "name": "better-health-test/better-health",
-  "description": "",
-  "type": "wordpress-plugin",
-  "autoload": {
-    "psr-4": {
-      "BetterHealth\\": "src/"
-    }
-  },
-  "require": {}
+    "name": "better-health-test/better-health",
+    "description": "",
+    "type": "wordpress-plugin",
+    "autoload": {
+      "psr-4": {
+        "BetterHealth\\": "src/"
+      }
+    },
+    "require": {}
 }

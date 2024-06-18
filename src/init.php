@@ -17,7 +17,15 @@ class Init {
     }
 
     private function setup_hooks() {
-        // Add hooks here
+        add_action('wp_enqueue_scripts', function () {
+            wp_enqueue_script(
+                'betterhealth-plugin-react-app',
+                plugins_url('./Frontend/build/bundle.js', __FILE__),
+                [],
+                '1.0.0',
+                true
+            );
+        });
     }
 }
 
