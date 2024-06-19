@@ -10,15 +10,19 @@ class Data {
     private $data = [];
 
     public function __construct() {
-        // $jsonString = file_get_contents(plugin_dir_path( __FILE__ ) . self::SAMPLE_DATA_PATH);
-        // $this->data = $jsonString;
+        $this->data = $this->get_sample_data();
 
-        $this->do_curl();
-        // $this->data = '[]';
+        // $this->do_curl();
     }
 
     public function get_data() {
         return $this->data;
+    }
+
+    public function get_sample_data() {
+        $jsonString = file_get_contents(plugin_dir_path(__FILE__) . self::SAMPLE_DATA_PATH);
+
+        return $jsonString;
     }
 
     public function do_curl() {

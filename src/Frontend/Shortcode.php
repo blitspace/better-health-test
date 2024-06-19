@@ -23,7 +23,9 @@ class Shortcode {
 
 
         foreach($this->decoded_data as $row) {
-            $_options[] = $row->{$prop};
+            if (property_exists($row, $prop)) {
+                $_options[] = $row->{$prop};
+            }
         }
     
         $unique = array_unique($_options);
@@ -55,7 +57,8 @@ class Shortcode {
             . '<div id="betterhealth-react-app"></div>'
             . '<script>'
             . 'window.bh = {};'
-            . 'window.bh.data = ' . $this->raw_data . ';'
+            // . 'window.bh.data = ' . $this->raw_data . ';'
+            . 'window.bh.data = ' . $data . ';'
             . 'window.bh.technologyOptions = ' . json_encode($this->get_technology_options()) . ';'
             . 'window.bh.subTechnologyOptions = ' . json_encode($this->get_sub_technology_options()) . ';'
             . 'window.bh.vendorOptions = ' . json_encode($this->get_vendor_options()) . ';'

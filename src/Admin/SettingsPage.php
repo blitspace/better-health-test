@@ -2,6 +2,9 @@
 
 namespace BetterHealth\Admin;
 
+use BetterHealth\Data\Data;
+
+
 class SettingsPage {
     const OPTION_NAME = 'betterhealth_plugin_options';
     const PAGE = 'betterhealth_plugin';
@@ -10,6 +13,14 @@ class SettingsPage {
     public function __construct() {
         add_action('admin_menu', [$this, 'add_plugin_page']);
         add_action('admin_init', [$this, 'register_settings']);
+        add_action('admin_post_' . 'fetch_data_action', [$this, 'fetch_data_action']);
+        add_action('admin_notices', [$this, 'admin_notices']);
+    }
+
+    public function admin_notices() {
+        if (isset($_GET['data_fetched']) && $_GET['data_fetched'] === 'true') {
+            echo '<div class="notice notice-success is-dismissible"><p><strong>Data fetch done.</strong></p></div>';
+        }
     }
 
     public function add_plugin_page() {
@@ -29,10 +40,18 @@ class SettingsPage {
         echo '<form method="post" action="options.php">';
 
         settings_fields('betterhealth_plugin_options');
+        // wp_nonce_field('update_data_action');
         do_settings_sections('betterhealth_plugin');
         submit_button();
 
         echo '</form>';
+
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
+        // wp_nonce_field('fetch_data_action');
+        echo '<input type="hidden" name="action" value="fetch_data_action" />';
+        submit_button('Fetch data from Mockaroo', 'secondary');
+        echo '</form>';
+
         echo '</div>';
     }
 
@@ -77,5 +96,24 @@ class SettingsPage {
 
     public function sanitize($input) {
         return $input;
+    }
+
+    public function fetch_data_action() {
+        $data = new Data();
+        // check_admin_referer('fetch_data_action');
+        $options = get_option(self::OPTION_NAME);
+
+        $options[self::JSON_DATA_FIELDNAME] = $data->get_sample_data();
+        update_option(self::OPTION_NAME, $options);
+
+        wp_redirect(
+            add_query_arg([
+                'page' => 'better-health',
+                'data_fetched' => 'true',
+            ],
+            admin_url('options-general.php')
+        ));
+
+        exit;
     }
 }
