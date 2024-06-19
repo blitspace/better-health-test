@@ -6,6 +6,7 @@ use BetterHealth\Data\Data;
 use BetterHealth\Admin\SettingsPage;
 
 class Shortcode {
+    const SHORTCODE = 'betterhealth_shortcode';
     private $raw_data;
     private $decoded_data;
 
@@ -15,7 +16,7 @@ class Shortcode {
         $this->raw_data = $data->get_data();
         $this->decoded_data = json_decode($this->raw_data);
 
-        add_shortcode('betterhealth_shortcode', [$this, 'render_shortcode']);
+        add_shortcode(self::SHORTCODE, [$this, 'render_shortcode']);
     }
 
     private function get_unique_options($prop) {

@@ -3,6 +3,7 @@
 namespace BetterHealth\Admin;
 
 use BetterHealth\Data\Data;
+use BetterHealth\FrontEnd\Shortcode;
 
 
 class SettingsPage {
@@ -37,6 +38,10 @@ class SettingsPage {
     public function create_admin_page() {
         echo '<div class="wrap">';
         echo '<h1>Better Health Settings</h1>';
+        echo '<h2>How to Use</h2>';
+        echo '<p>On the page editor please use</p>';
+        echo '<p><strong>[' . Shortcode::SHORTCODE . ']</strong></p>';
+        echo '<hr />';
         echo '<form method="post" action="options.php">';
 
         settings_fields('betterhealth_plugin_options');
@@ -45,6 +50,8 @@ class SettingsPage {
         submit_button();
 
         echo '</form>';
+
+        echo '<hr />';
 
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         // wp_nonce_field('fetch_data_action');
@@ -91,6 +98,21 @@ class SettingsPage {
             style="width: 100%;"
             rows="10"
         ><?= esc_attr($options[self::JSON_DATA_FIELDNAME]); ?></textarea>
+        <p>&nbsp;</p>
+        <div><strong>Sample data:</strong></div>
+        <pre>
+[{
+    "id": 1,
+    "sku": "sku-1000",
+    "category": "design",
+    "name": "Fantastic Widget",
+    "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+    "technology": "smartphone",
+    "sub_technology": "AR/VR",
+    "vendor": "Global Imports",
+    "product_type": "electronics"
+}]
+        </pre>
         <?php
     }
 
@@ -100,6 +122,7 @@ class SettingsPage {
 
     public function fetch_data_action() {
         $data = new Data();
+
         // check_admin_referer('fetch_data_action');
         $options = get_option(self::OPTION_NAME);
 
