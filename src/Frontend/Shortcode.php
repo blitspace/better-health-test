@@ -3,6 +3,7 @@
 namespace BetterHealth\Frontend;
 
 use BetterHealth\Data\Data;
+use BetterHealth\Admin\SettingsPage;
 
 class Shortcode {
     private $data;
@@ -47,7 +48,10 @@ class Shortcode {
     }
 
     public function render_shortcode($atts, $content = null) {
+        $data = get_option(SettingsPage::OPTION_NAME)[SettingsPage::JSON_DATA_FIELDNAME];
+
         return '<section>'
+            . '<pre>' . $data . '</pre>'
             . '<div class="betterhealth-shortcode"><strong>Hello, World!</strong></div>'
             . '<div id="betterhealth-react-app"></div>'
             . '<script>'
