@@ -56,6 +56,7 @@ class SettingsPage {
 
         echo '<hr />';
 
+        echo "<h2>Get data from sample file / Fetch from Mockaroo</h2>";
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         wp_nonce_field('fetch_data_action');
         echo '<input type="hidden" name="action" value="fetch_data_action_file" />';
@@ -68,6 +69,9 @@ class SettingsPage {
         submit_button('Fetch data from Mockaroo', 'secondary');
         echo '</form>';
 
+        echo '<hr />';
+
+        echo "<h2>Upload CSV file</h2>";
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" enctype="multipart/form-data">';
         wp_nonce_field('fetch_data_action');
         echo '<input type="file" name="csv_file" id="csv_file" />';
@@ -75,9 +79,11 @@ class SettingsPage {
         submit_button('Upload', 'secondary', 'import_csv');
         echo '</form>';
 
+        echo '<hr />';
+
+        echo "<h2>Download CSV file</h2>";
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         wp_nonce_field('fetch_data_action');
-        echo '<input type="file" name="csv_file" id="csv_file" />';
         echo '<input type="hidden" name="action" value="download_csv" />';
         submit_button('Download CSV file', 'secondary', 'download_csv');
         echo '</form>';
@@ -184,15 +190,26 @@ class SettingsPage {
 
         $data = json_decode($data, true);
 
+        ob_start();
+        $file = fopen('php://output', 'w');
+        $header = array_keys($data[0]);
+        fputcsv($file, $header);
+
+        foreach ($data as $row) {
+            $_row = preg_replace('/\s+/', ' ', $row);
+            fputcsv($file, $_row);
+        }
+
+        fclose($file);
+
         error_log(print_r($data, true));
 
-        wp_redirect(
-            add_query_arg([
-                'page' => 'better-health',
-                'data_fetched' => 'true',
-            ],
-            admin_url('options-general.php')
-        ));
+        $csv_content = ob_get_clean();
+
+        header('Content-Type: text/csv');
+        header('Content-Disposition: attachment; filename="better-health-file.csv"');
+
+        echo $csv_content;
 
         exit;
     }
