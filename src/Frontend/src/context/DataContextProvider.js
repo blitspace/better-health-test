@@ -8,7 +8,27 @@ function DataContextProvider({ children }) {
         [...window.bh.data]
     );
 
+    const [technologyOptions] = useState(
+        [...window.bh.technologyOptions]
+    );
+
+    const [subTechnologyOptions] = useState(
+        [...window.bh.subTechnologyOptions]
+    );
+
+    const [vendorOptions] = useState(
+        [...window.bh.vendorOptions]
+    );
+
+    const [productTypeOptions] = useState(
+        [...window.bh.productTypeOptions]
+    );
+
     const [activeCat, setActiveCat] = useState('all');
+    const [activeTechnologyFilter, setActiveTechnologyFilter] = useState(null);
+    const [activeSubTechnologyFilter, setActiveSubTechnologyFilter] = useState(null);
+    const [activeVendorFilter, setActiveVendorFilter] = useState(null);
+    const [activeProductTypeFilter, setActiveProductTypeFilter] = useState(null);
 
     const [textFilter, setTextFilter] = useState('');
 
@@ -24,6 +44,22 @@ function DataContextProvider({ children }) {
         setTextFilter(newTextFilter);
     };
 
+    const updateTechnologyFilter = (newTechnologyFilter) => {
+        setActiveTechnologyFilter(newTechnologyFilter);
+    };
+
+    const updateSubTechnologyFilter = (newSubTechnologyFilter) => {
+        setActiveSubTechnologyFilter(newSubTechnologyFilter);
+    };  
+
+    const updateVendorFilter = (newVendorFilter) => {
+        setActiveVendorFilter(newVendorFilter);
+    };
+
+    const updateProductTypeFilter = (newProductTypeFilter) => {
+        setActiveProductTypeFilter(newProductTypeFilter);
+    };
+
     return (
         <DataContext.Provider value={{
             activeCat,
@@ -31,7 +67,24 @@ function DataContextProvider({ children }) {
             textFilter,
             updateTextFilter,
             data,
-            updateData
+            updateData,
+
+            technologyOptions,
+            subTechnologyOptions,
+            vendorOptions,
+            productTypeOptions,
+
+            activeTechnologyFilter,
+            updateTechnologyFilter,
+
+            activeSubTechnologyFilter,
+            updateSubTechnologyFilter,
+
+            activeVendorFilter,
+            updateVendorFilter,
+
+            activeProductTypeFilter,
+            updateProductTypeFilter,
         }}>
             {children}
         </DataContext.Provider>

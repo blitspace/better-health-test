@@ -1,21 +1,15 @@
 import React from "react";
+import { useContext } from "react";
+import DataContext from "./context/DataContext";
+import { normalizeText, capitalizeFirstLetter } from "./utils";
 
-
-const dropItems = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-];
-
-const FilterX = ({ name, prompt }) => {
+const Filter = ({ name, prompt, options = [], onChange }) => {
     return (
-        <select name={name} id={name} className="dropdown px-4 py-2">
+        <select name={name} id={name} className="dropdown px-4 py-2" onChange={onChange}>
             <option value="">{ prompt }</option>
-            { dropItems.map((item, idx) => {
+            { options.map((item, idx) => {
                 return (
-                    <option key={idx} value={item}>{ item }</option>
+                    <option key={idx} value={normalizeText(item)}>{ capitalizeFirstLetter(item) }</option>
                 );
             })}
         </select>
@@ -23,12 +17,42 @@ const FilterX = ({ name, prompt }) => {
 };
 
 const Filters = () => {
+    const context = useContext(DataContext);
+
+    const technologyOptions = context.technologyOptions;
+    const subTechnologyOptions = context.subTechnologyOptions;
+    const vendorOptions = context.vendorOptions;
+    const productTypeOptions = context.productTypeOptions;
+
     return (
         <div className="flex flex-row gap-4">
-            <FilterX name="tech" prompt="Technology" />
-            <FilterX name="sub-tech" prompt="Sub technology" />
-            <FilterX name="vendor" prompt="Vendor" />
-            <FilterX name="product" prompt="Product" />
+            <Filter
+                name="tech"
+                prompt="Technology"
+                options={technologyOptions}
+                onChange={e => context.updateTechnologyFilter(e.target.value)}
+            />
+
+            <Filter
+                name="sub-tech"
+                prompt="Sub technology"
+                options={subTechnologyOptions}
+                onChange={e => context.updateSubTechnologyFilter(e.target.value)}
+            />
+
+            <Filter
+                name="vendor"
+                prompt="Vendor" 
+                options={vendorOptions}
+                onChange={e => context.updateVendorFilter(e.target.value)}
+            />
+
+            <Filter
+                name="product"
+                prompt="Product"
+                options={productTypeOptions}
+                onChange={e => context.updateProductTypeFilter(e.target.value)}
+            />
         </div>
     );
 };
