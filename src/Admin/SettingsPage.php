@@ -14,7 +14,8 @@ class SettingsPage {
     public function __construct() {
         add_action('admin_menu', [$this, 'add_plugin_page']);
         add_action('admin_init', [$this, 'register_settings']);
-        add_action('admin_post_' . 'fetch_data_action', function() { $this->fetch_data_action('file'); });
+        add_action('admin_post_' . 'fetch_data_action_file', function() { $this->fetch_data_action('file'); });
+        add_action('admin_post_' . 'fetch_data_action_mockaroo', function() { $this->fetch_data_action('mockaroo'); });
         add_action('admin_notices', [$this, 'admin_notices']);
     }
 
@@ -55,7 +56,13 @@ class SettingsPage {
 
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         wp_nonce_field('fetch_data_action');
-        echo '<input type="hidden" name="action" value="fetch_data_action" />';
+        echo '<input type="hidden" name="action" value="fetch_data_action_file" />';
+        submit_button('Get data from sample file', 'secondary');
+        echo '</form>';
+
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
+        wp_nonce_field('fetch_data_action');
+        echo '<input type="hidden" name="action" value="fetch_data_action_mockaroo" />';
         submit_button('Fetch data from Mockaroo', 'secondary');
         echo '</form>';
 
@@ -129,7 +136,7 @@ class SettingsPage {
         if ($source === 'file') {
             $options[self::JSON_DATA_FIELDNAME] = $data->get_sample_data();
         } else if ($source === 'mockaroo') {
-            // Fetch from Mockaroo
+            $options[self::JSON_DATA_FIELDNAME] = $data->do_curl();
         } else if ($source === 'csv') {
             // Load from csv file
         }

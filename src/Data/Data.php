@@ -48,6 +48,8 @@ class Data {
         }
         
         curl_close($curl);
+
+        return $response;
     }
 }
 
