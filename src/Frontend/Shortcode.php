@@ -19,7 +19,8 @@ class Shortcode {
             . '<div class="betterhealth-shortcode"><strong>Hello, World!</strong></div>'
             . '<div id="betterhealth-react-app"></div>'
             . '<script>'
-            . 'window.bh = '
+            . 'window.bh = {};'
+            . 'window.bh.data = '
             . $this->data
             . '</script>'
             . '</section>';

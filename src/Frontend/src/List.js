@@ -2,13 +2,19 @@ import React from "react";
 import ListItem from "./ListItem";
 
 
-const List = () => {
+const List = ({ listItems =[] }) => {
     return (
         <div>
-            <ListItem title="title" description="Lorem Ipsum" sku="qwe-123" />
-            <ListItem title="title" description="Lorem Ipsum" sku="qwe-123" />
-            <ListItem title="title" description="Lorem Ipsum" sku="qwe-123" />
-            <ListItem title="title" description="Lorem Ipsum" sku="qwe-123" />
+            {listItems.map((item) => {
+                return (
+                    <ListItem
+                        key={item.id}
+                        title={item.name}
+                        description={item.description}
+                        sku={item.sku}
+                    />
+                );
+            })}
         </div>
     );
 };

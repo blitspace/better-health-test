@@ -1,10 +1,16 @@
 import React from "react";
+import { useContext } from "react";
 import Filters from "./Filters";
 import List from "./List";
 import Search from "./Search";
+import { DataContext } from "./context/DataContext";
 
 
 const Browser = ({ title, description }) => {
+    const dataContext = useContext(DataContext);
+
+    console.log(dataContext);
+
     return (
         <div>
             <div className="mb-8">
@@ -22,7 +28,7 @@ const Browser = ({ title, description }) => {
                 <Filters />
             </div>
             <div>
-                <List />
+                <List listItems={dataContext.data.slice(0, 4)} />
             </div>
         </div>
     );
