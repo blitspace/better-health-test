@@ -8,9 +8,9 @@ function DataContextProvider({ children }) {
         [...window.bh.data]
     );
 
-    const [activeCat, setActiveCat] = useState(
-        'all'
-    );
+    const [activeCat, setActiveCat] = useState('all');
+
+    const [textFilter, setTextFilter] = useState('');
 
     const updateData = (newData) => {
         setData(newData);
@@ -20,10 +20,16 @@ function DataContextProvider({ children }) {
         setActiveCat(newActiveCat);
     };
 
+    const updateTextFilter = (newTextFilter) => {
+        setTextFilter(newTextFilter);
+    };
+
     return (
         <DataContext.Provider value={{
             activeCat,
             updateActiveCat,
+            textFilter,
+            updateTextFilter,
             data,
             updateData
         }}>

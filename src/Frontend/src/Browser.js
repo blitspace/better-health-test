@@ -13,11 +13,13 @@ const Browser = ({ title, description }) => {
 
     const filteredList = dataContext.data.filter(
         (item) => {
-            if (dataContext.activeCat === "all") {
-                return true;
-            }
+            const catFilter = dataContext.activeCat === "all" || item.category.toLowerCase().includes(dataContext.activeCat.toLowerCase());
+            const textFilter = dataContext.textFilter === "" || (
+                item.name.toLowerCase().includes(dataContext.textFilter.toLowerCase())
+                    || item.description.toLowerCase().includes(dataContext.textFilter.toLowerCase())
+            );
 
-            return item.category.toLowerCase().includes(dataContext.activeCat.toLowerCase())
+            return catFilter && textFilter;
         }
     );
 
