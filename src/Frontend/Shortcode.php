@@ -6,14 +6,14 @@ use BetterHealth\Data\Data;
 use BetterHealth\Admin\SettingsPage;
 
 class Shortcode {
-    private $data;
+    private $raw_data;
     private $decoded_data;
 
     public function __construct() {
         $data = new Data();
 
-        $this->data = $data->get_data();
-        $this->decoded_data = json_decode($this->data);
+        $this->raw_data = $data->get_data();
+        $this->decoded_data = json_decode($this->raw_data);
 
         add_shortcode('betterhealth_shortcode', [$this, 'render_shortcode']);
     }
@@ -51,12 +51,11 @@ class Shortcode {
         $data = get_option(SettingsPage::OPTION_NAME)[SettingsPage::JSON_DATA_FIELDNAME];
 
         return '<section>'
-            . '<pre>' . $data . '</pre>'
-            . '<div class="betterhealth-shortcode"><strong>Hello, World!</strong></div>'
+            // . '<pre class="text-sm">' . $data . '</pre>'
             . '<div id="betterhealth-react-app"></div>'
             . '<script>'
             . 'window.bh = {};'
-            . 'window.bh.data = ' . $this->data . ';'
+            . 'window.bh.data = ' . $this->raw_data . ';'
             . 'window.bh.technologyOptions = ' . json_encode($this->get_technology_options()) . ';'
             . 'window.bh.subTechnologyOptions = ' . json_encode($this->get_sub_technology_options()) . ';'
             . 'window.bh.vendorOptions = ' . json_encode($this->get_vendor_options()) . ';'
