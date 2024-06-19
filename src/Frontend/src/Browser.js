@@ -32,27 +32,31 @@ const Browser = ({ title, description }) => {
         }
     );
 
-    return (
+    return (<>
         <div>
-            <div className="mb-8">
-                <div className="flex flex-row items-center mb-4">
-                    <div className="basis-2/3">
-                        <div className="h1 text-2xl font-bold">{title}</div>
+
+            <div className="sticky top-0 border-none p-0 bg-gray-100">
+                <div className="mb-8">
+                    <div className="flex flex-row items-center mb-4">
+                        <div className="basis-2/3">
+                            <div className="h1 text-2xl font-bold">{title}</div>
+                        </div>
+                        <div className="basis-1/3">
+                            <Search />
+                        </div>
                     </div>
-                    <div className="basis-1/3">
-                        <Search />
-                    </div>
+                    <div>{description}</div>
                 </div>
-                <div>{description}</div>
+                <div className="mb-8">
+                    <Filters />
+                </div>
             </div>
-            <div className="mb-8">
-                <Filters />
-            </div>
+
             <div>
                 <List listItems={filteredList} />
             </div>
         </div>
-    );
+    </>);
 };
 
 export default Browser;
