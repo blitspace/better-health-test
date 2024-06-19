@@ -16,7 +16,7 @@ const CatNav = () => {
     const context = useContext(DataContext);
 
     return (
-        <div>
+        <div className="sticky top-0 border-none p-0">
             <div className="relative">
                 <div className="cat-item--all">
                     <a
