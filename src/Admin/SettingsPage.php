@@ -16,6 +16,7 @@ class SettingsPage {
         add_action('admin_init', [$this, 'register_settings']);
         add_action('admin_post_' . 'fetch_data_action_file', function() { $this->fetch_data_action('file'); });
         add_action('admin_post_' . 'fetch_data_action_mockaroo', function() { $this->fetch_data_action('mockaroo'); });
+        add_action('admin_post_' . 'fetch_data_action_csv', function() { $this->fetch_data_action('csv'); });
         add_action('admin_notices', [$this, 'admin_notices']);
     }
 
@@ -64,6 +65,14 @@ class SettingsPage {
         wp_nonce_field('fetch_data_action');
         echo '<input type="hidden" name="action" value="fetch_data_action_mockaroo" />';
         submit_button('Fetch data from Mockaroo', 'secondary');
+        echo '</form>';
+
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" enctype="multipart/form-data">';
+        wp_nonce_field('fetch_data_action');
+        echo '<input type="file" name="csv_file" id="csv_file" />';
+        echo '<input type="hidden" name="action" value="fetch_data_action_csv" />';
+        // echo '<input type="submit" name="import_csv" value="Upload" />';
+        submit_button('Upload', 'secondary', 'import_csv');
         echo '</form>';
 
         echo '</div>';
@@ -138,7 +147,26 @@ class SettingsPage {
         } else if ($source === 'mockaroo') {
             $options[self::JSON_DATA_FIELDNAME] = $data->do_curl();
         } else if ($source === 'csv') {
-            // Load from csv file
+            if (isset($_POST['import_csv'])) {
+                $uploaded_file = $_FILES['csv_file']['tmp_name'];
+
+                $csv_array = array_map('str_getcsv', file($uploaded_file));
+                $header = array_shift($csv_array);
+
+                $assoc_array = [];
+
+                foreach ($csv_array as $row) {
+                    $assoc_row = [];
+                    foreach ($header as $index => $column_name) {
+                        $assoc_row[$column_name] = $row[$index];
+                    }
+                    $assoc_array[] = $assoc_row;
+                }
+
+                error_log('---' . print_r(json_encode($header), true));
+                error_log('---' . print_r(json_encode($assoc_array), true));
+                $options[self::JSON_DATA_FIELDNAME] = json_encode($assoc_array);
+            }
         }
 
         update_option(self::OPTION_NAME, $options);
