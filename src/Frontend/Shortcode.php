@@ -6,12 +6,44 @@ use BetterHealth\Data\Data;
 
 class Shortcode {
     private $data;
+    private $decoded_data;
 
     public function __construct() {
-        add_shortcode('betterhealth_shortcode', [$this, 'render_shortcode']);
         $data = new Data();
 
         $this->data = $data->get_data();
+        $this->decoded_data = json_decode($this->data);
+
+        add_shortcode('betterhealth_shortcode', [$this, 'render_shortcode']);
+    }
+
+    private function get_unique_options($prop) {
+        $_options = [];
+
+
+        foreach($this->decoded_data as $row) {
+            $_options[] = $row->{$prop};
+        }
+    
+        $unique = array_unique($_options);
+
+        return array_values($unique);
+    }
+
+    private function get_technology_options() {
+        return $this->get_unique_options('technology');
+    }
+
+    private function get_sub_technology_options() {
+        return $this->get_unique_options('sub_technology');
+    }
+
+    private function get_vendor_options() {
+        return $this->get_unique_options('vendor');
+    }
+
+    private function get_product_type_options() {
+        return $this->get_unique_options('product_type');
     }
 
     public function render_shortcode($atts, $content = null) {
@@ -20,8 +52,11 @@ class Shortcode {
             . '<div id="betterhealth-react-app"></div>'
             . '<script>'
             . 'window.bh = {};'
-            . 'window.bh.data = '
-            . $this->data
+            . 'window.bh.data = ' . $this->data . ';'
+            . 'window.bh.technologyOptions = ' . json_encode($this->get_technology_options()) . ';'
+            . 'window.bh.subTechnologyOptions = ' . json_encode($this->get_sub_technology_options()) . ';'
+            . 'window.bh.vendorOptions = ' . json_encode($this->get_vendor_options()) . ';'
+            . 'window.bh.productTypeOptions = ' . json_encode($this->get_product_type_options()) . ';'
             . '</script>'
             . '</section>';
     }
