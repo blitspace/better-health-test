@@ -11,12 +11,22 @@ const Browser = ({ title, description }) => {
 
     console.log(dataContext);
 
+    const filteredList = dataContext.data.filter(
+        (item) => {
+            if (dataContext.activeCat === "all") {
+                return true;
+            }
+
+            return item.category.toLowerCase().includes(dataContext.activeCat.toLowerCase())
+        }
+    );
+
     return (
         <div>
             <div className="mb-8">
                 <div className="flex flex-row items-center mb-4">
                     <div className="basis-2/3">
-                        <div className="h1 font-bold">{title}</div>
+                        <div className="h1 text-2xl font-bold">{title}</div>
                     </div>
                     <div className="basis-1/3">
                         <Search />
@@ -28,7 +38,7 @@ const Browser = ({ title, description }) => {
                 <Filters />
             </div>
             <div>
-                <List listItems={dataContext.data.slice(0, 4)} />
+                <List listItems={filteredList} />
             </div>
         </div>
     );

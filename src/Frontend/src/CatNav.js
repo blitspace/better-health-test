@@ -1,22 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "./context/DataContext";
+
+import './CatNav.css';
 
 const cats = [
-    'Advisory',
-    'Design',
-    'Implementation',
-    'Support',
-    'Assessments',
-    'Trainings',
+    'advisory',
+    'design',
+    'implementation',
+    'support',
+    'assessments',
+    'trainings',
 ];
 
-const CatNav = ({activeIndx}) => {
+const CatNav = () => {
+    const context = useContext(DataContext);
+
     return (
         <div>
             <div className="relative">
                 <div className="cat-item--all">
                     <a
                         href="#"
-                        className={`${activeIndx === 'all' ? 'active' : ''} block text-white px-4 py-4 bg-gray-300 rounded-md text-center hover:bg-blue-300`}
+                        className={`${context.activeCat === 'all' ? 'active' : ''} block text-white px-4 py-4 bg-gray-300 rounded-md text-center hover:bg-blue-300 transition duration-300`}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            context.updateActiveCat('all');
+                        }}
                     >
                         All Life Cycle
                     </a>
@@ -25,7 +34,7 @@ const CatNav = ({activeIndx}) => {
             <div className="relative">
                 {cats.map((cat, idx) => {
                     let activeClass = '';
-                    if (idx === activeIndx) {
+                    if (context.activeCat === cats[idx]) {
                         activeClass = 'active';
                     }
                     return (
@@ -35,7 +44,11 @@ const CatNav = ({activeIndx}) => {
                         >
                             <a
                                 href="#"
-                                className={`${activeClass} block text-white px-4 py-2 bg-gray-300 rounded-md text-center hover:bg-blue-300`}
+                                className={`${activeClass} block text-white px-4 py-2 bg-gray-300 rounded-md text-center hover:bg-blue-300 capitalize transition duration-300`}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    context.updateActiveCat(cats[idx]);
+                                }}
                             >{cat}</a>
                         </div>
                     );

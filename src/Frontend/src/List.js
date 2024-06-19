@@ -12,6 +12,7 @@ const List = ({ listItems =[] }) => {
                         title={item.name}
                         description={item.description}
                         sku={item.sku}
+                        cat={item.category}
                     />
                 );
             })}
