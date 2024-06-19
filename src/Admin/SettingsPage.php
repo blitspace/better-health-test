@@ -150,22 +150,8 @@ class SettingsPage {
             if (isset($_POST['import_csv'])) {
                 $uploaded_file = $_FILES['csv_file']['tmp_name'];
 
-                $csv_array = array_map('str_getcsv', file($uploaded_file));
-                $header = array_shift($csv_array);
-
-                $assoc_array = [];
-
-                foreach ($csv_array as $row) {
-                    $assoc_row = [];
-                    foreach ($header as $index => $column_name) {
-                        $assoc_row[$column_name] = $row[$index];
-                    }
-                    $assoc_array[] = $assoc_row;
-                }
-
-                error_log('---' . print_r(json_encode($header), true));
-                error_log('---' . print_r(json_encode($assoc_array), true));
-                $options[self::JSON_DATA_FIELDNAME] = json_encode($assoc_array);
+                $options[self::JSON_DATA_FIELDNAME]
+                    = json_encode($data->parse_csv($uploaded_file));
             }
         }
 

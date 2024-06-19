@@ -51,5 +51,25 @@ class Data {
 
         return $response;
     }
+
+    public function parse_csv($uploaded_file) {
+        $csv_array = array_map('str_getcsv', file($uploaded_file));
+        $header = array_shift($csv_array);
+
+        $assoc_array = [];
+
+        foreach ($csv_array as $row) {
+            $assoc_row = [];
+            foreach ($header as $index => $column_name) {
+                $assoc_row[$column_name] = $row[$index];
+            }
+            $assoc_array[] = $assoc_row;
+        }
+
+        error_log('---' . print_r(json_encode($header), true));
+        error_log('---' . print_r(json_encode($assoc_array), true));
+
+        return $assoc_array;
+    }
 }
 
