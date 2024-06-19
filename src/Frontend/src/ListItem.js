@@ -7,12 +7,12 @@ const Tag = ({ label }) => {
 };
 
 const ListItem = ({ title, description, sku, cat, tech, subTech, vendor, productType }) => {
-    return (<div className="p-4 border border-solid rounded-md mb-4">
-        <div className="flex flex-row justify-between">
+    return (<div className="p-4 border border-solid rounded-md mb-4 border-gray-300">
+        <div className="flex flex-row justify-between mb-4">
             <div className="font-bold">{title}</div>
-            <div className="uppercase text-sm">{sku}</div>
+            <div className="uppercase text-xs">{sku}</div>
         </div>
-        <div>
+        <div className="text-sm">
             {description}
         </div>
 

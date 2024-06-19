@@ -8,7 +8,7 @@ const App = () => {
     return (
         <DataContextProvider>
             <div className='tw'>
-                <div className="bg-gray-100 p-8 mb-8">
+                <div className="bg-gray-100/50 p-8 mb-8">
                     <div className="flex flex-row gap-10">
                         <div className="basis-[300px]">
                             <CatNav activeIndx={0} />

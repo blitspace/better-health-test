@@ -21,7 +21,7 @@ const CatNav = () => {
                 <div className="cat-item--all">
                     <a
                         href="#"
-                        className={`${context.activeCat === 'all' ? 'active' : ''} block text-white px-4 py-4 bg-gray-300 rounded-md text-center hover:bg-blue-300 transition duration-300`}
+                        className={`${context.activeCat === 'all' ? 'active' : ''} block text-blue-600 px-4 py-4 bg-gray-200 rounded-md text-center hover:bg-blue-300 transition duration-300`}
                         onClick={(e) => {
                             e.preventDefault();
                             context.updateActiveCat('all');
@@ -44,7 +44,7 @@ const CatNav = () => {
                         >
                             <a
                                 href="#"
-                                className={`${activeClass} block text-white px-4 py-2 bg-gray-300 rounded-md text-center hover:bg-blue-300 capitalize transition duration-300`}
+                                className={`${activeClass} block text-blue-600 px-4 py-2 bg-gray-200 rounded-md text-center hover:bg-blue-300 capitalize transition duration-300`}
                                 onClick={(e) => {
                                     e.preventDefault();
                                     context.updateActiveCat(cats[idx]);
