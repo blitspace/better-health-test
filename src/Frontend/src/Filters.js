@@ -6,7 +6,7 @@ import { normalizeText, capitalizeFirstLetter } from "./utils";
 const Filter = ({ name, prompt, options = [], onChange }) => {
     return (
         <select name={name} id={name} className="dropdown px-4 py-2" onChange={onChange}>
-            <option value="">{ prompt }</option>
+            <option value="">-- { prompt } --</option>
             { options.map((item, idx) => {
                 return (
                     <option key={idx} value={normalizeText(item)}>{ capitalizeFirstLetter(item) }</option>

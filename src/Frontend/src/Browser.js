@@ -4,22 +4,31 @@ import Filters from "./Filters";
 import List from "./List";
 import Search from "./Search";
 import { DataContext } from "./context/DataContext";
+import { normalizeText } from "./utils";
 
 
 const Browser = ({ title, description }) => {
     const dataContext = useContext(DataContext);
 
-    console.log(dataContext);
-
     const filteredList = dataContext.data.filter(
         (item) => {
-            const catFilter = dataContext.activeCat === "all" || item.category.toLowerCase().includes(dataContext.activeCat.toLowerCase());
-            const textFilter = dataContext.textFilter === "" || (
+            const catFilter = dataContext.activeCat === "all"
+                || item.category.toLowerCase().includes(dataContext.activeCat.toLowerCase());
+            const textFilter = dataContext.textFilter === '' || (
                 item.name.toLowerCase().includes(dataContext.textFilter.toLowerCase())
                     || item.description.toLowerCase().includes(dataContext.textFilter.toLowerCase())
             );
 
-            return catFilter && textFilter;
+            const technologyFilter = dataContext.activeTechnologyFilter === ''
+                || normalizeText(item.technology).includes(dataContext.activeTechnologyFilter.toLowerCase());
+            const subTechnologyFilter = dataContext.activeSubTechnologyFilter === ''
+                || normalizeText(item.sub_technology).includes(dataContext.activeSubTechnologyFilter.toLowerCase());
+            const vendorFilter = dataContext.activeVendorFilter === ''
+                || normalizeText(item.vendor).includes(dataContext.activeVendorFilter.toLowerCase());
+            const productTypeFilter = dataContext.activeProductTypeFilter === ''
+                || normalizeText(item.product_type).includes(dataContext.activeProductTypeFilter.toLowerCase());
+
+            return catFilter && textFilter && technologyFilter && subTechnologyFilter && vendorFilter && productTypeFilter;
         }
     );
 

@@ -1,4 +1,6 @@
 import React from "react";
+import { normalizeText } from "./utils";
+
 
 const Tag = ({ label }) => {
     return (<span className="bg-blue-300 ml-1 p-1 rounded-md">{label}</span>);
@@ -16,20 +18,22 @@ const ListItem = ({ title, description, sku, cat, tech, subTech, vendor, product
 
         <div className="text-xs mt-4 flex flex-row gap-4">
             <div>DEBUG:</div>
-            <div>
-                cat: <Tag label={cat} />
-            </div>
-            <div>
-                tech: <Tag label={tech} />
-            </div>
-            <div>
-                sub-tech: <Tag label={subTech} />
-            </div>
-            <div>
-                vendor: <Tag label={vendor} />
-            </div>
-            <div>
-                product type: <Tag label={productType} />
+            <div className="flex flex-row gap-2 flex-wrap">
+                <div>
+                    cat: <Tag label={normalizeText(cat)} />
+                </div>
+                <div>
+                    tech: <Tag label={normalizeText(tech)} />
+                </div>
+                <div>
+                    sub-tech: <Tag label={normalizeText(subTech)} />
+                </div>
+                <div>
+                    vendor: <Tag label={normalizeText(vendor)} />
+                </div>
+                <div>
+                    product type: <Tag label={normalizeText(productType)} />
+                </div>
             </div>
         </div>
     </div>);

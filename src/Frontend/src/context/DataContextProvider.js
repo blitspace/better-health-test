@@ -25,10 +25,10 @@ function DataContextProvider({ children }) {
     );
 
     const [activeCat, setActiveCat] = useState('all');
-    const [activeTechnologyFilter, setActiveTechnologyFilter] = useState(null);
-    const [activeSubTechnologyFilter, setActiveSubTechnologyFilter] = useState(null);
-    const [activeVendorFilter, setActiveVendorFilter] = useState(null);
-    const [activeProductTypeFilter, setActiveProductTypeFilter] = useState(null);
+    const [activeTechnologyFilter, setActiveTechnologyFilter] = useState('');
+    const [activeSubTechnologyFilter, setActiveSubTechnologyFilter] = useState('');
+    const [activeVendorFilter, setActiveVendorFilter] = useState('');
+    const [activeProductTypeFilter, setActiveProductTypeFilter] = useState('');
 
     const [textFilter, setTextFilter] = useState('');
 
