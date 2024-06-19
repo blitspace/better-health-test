@@ -1,5 +1,5 @@
 module.exports = {
-    prefix: 'tw-',
+    important: '.tw',
     content: [
         './src/**/*.{js,php}'
     ],

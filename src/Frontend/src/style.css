@@ -2,10 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    background-color: lightblue;
+
+:root {
+    --cat-nav-item-spacing: 20px;
 }
 
-h1 {
-    @apply tw-text-center;
+.cat-item--all > .active,
+.cat-item > .active {
+    @apply bg-blue-600 text-white; 
+}
+
+.cat-item--all,
+.cat-item {
+    margin-bottom: var(--cat-nav-item-spacing);
+}
+
+.cat-item--all::before,
+.cat-item:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(var(--cat-nav-item-spacing) * -1);
+    height: var(--cat-nav-item-spacing);
+    width: 6px;
+    transform: translateX(-50%);
+    @apply bg-blue-600;
+}
+
+.cat-item--all::before {
+    top: auto;
+    bottom: calc(var(--cat-nav-item-spacing) * -1);
+}
+
+.dropdown::after {
+    right: 100px !important;
 }
