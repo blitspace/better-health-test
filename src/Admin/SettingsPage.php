@@ -17,6 +17,7 @@ class SettingsPage {
         add_action('admin_post_' . 'fetch_data_action_file', function() { $this->fetch_data_action('file'); });
         add_action('admin_post_' . 'fetch_data_action_mockaroo', function() { $this->fetch_data_action('mockaroo'); });
         add_action('admin_post_' . 'fetch_data_action_csv', function() { $this->fetch_data_action('csv'); });
+        add_action('admin_post_' . 'download_csv', [$this, 'download_csv']);
         add_action('admin_notices', [$this, 'admin_notices']);
     }
 
@@ -71,8 +72,14 @@ class SettingsPage {
         wp_nonce_field('fetch_data_action');
         echo '<input type="file" name="csv_file" id="csv_file" />';
         echo '<input type="hidden" name="action" value="fetch_data_action_csv" />';
-        // echo '<input type="submit" name="import_csv" value="Upload" />';
         submit_button('Upload', 'secondary', 'import_csv');
+        echo '</form>';
+
+        echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
+        wp_nonce_field('fetch_data_action');
+        echo '<input type="file" name="csv_file" id="csv_file" />';
+        echo '<input type="hidden" name="action" value="download_csv" />';
+        submit_button('Download CSV file', 'secondary', 'download_csv');
         echo '</form>';
 
         echo '</div>';
@@ -162,6 +169,27 @@ class SettingsPage {
                 'page' => 'better-health',
                 'data_fetched' => 'true',
                 'source' => $source,
+            ],
+            admin_url('options-general.php')
+        ));
+
+        exit;
+    }
+
+    public function download_csv() {
+        error_log('Download csv');
+
+        $options = get_option(self::OPTION_NAME);
+        $data = $options[self::JSON_DATA_FIELDNAME];
+
+        $data = json_decode($data, true);
+
+        error_log(print_r($data, true));
+
+        wp_redirect(
+            add_query_arg([
+                'page' => 'better-health',
+                'data_fetched' => 'true',
             ],
             admin_url('options-general.php')
         ));
