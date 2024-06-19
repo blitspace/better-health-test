@@ -11,7 +11,7 @@
 }, {
   "id": 2,
   "sku": "sku-2000",
-  "category": "traning",
+  "category": "trainings",
   "name": "MegaGadget 3000",
   "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
   "technology": "smartwatch",
@@ -31,7 +31,7 @@
 }, {
   "id": 4,
   "sku": "sku-4000",
-  "category": "traning",
+  "category": "trainings",
   "name": "Ultimate Gizmo",
   "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
   "technology": "smartwatch",
@@ -51,7 +51,7 @@
 }, {
   "id": 6,
   "sku": "sku-6000",
-  "category": "traning",
+  "category": "trainings",
   "name": "MegaGadget 3000",
   "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
   "technology": "camera",
@@ -71,7 +71,7 @@
 }, {
   "id": 8,
   "sku": "sku-8000",
-  "category": "traning",
+  "category": "trainings",
   "name": "MegaGadget 3000",
   "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
   "technology": "drone",
@@ -191,7 +191,7 @@
 }, {
   "id": 20,
   "sku": "sku-20000",
-  "category": "traning",
+  "category": "trainings",
   "name": "Fantastic Gadget",
   "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
   "technology": "smartwatch",
@@ -201,7 +201,7 @@
 }, {
   "id": 21,
   "sku": "sku-21000",
-  "category": "traning",
+  "category": "trainings",
   "name": "Incredible Gizmo",
   "description": "In congue. Etiam justo. Etiam pretium iaculis justo.",
   "technology": "drone",
@@ -281,7 +281,7 @@
 }, {
   "id": 29,
   "sku": "sku-29000",
-  "category": "traning",
+  "category": "trainings",
   "name": "Awesome Gizmo",
   "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
   "technology": "drone",
@@ -411,7 +411,7 @@
 }, {
   "id": 42,
   "sku": "sku-42000",
-  "category": "traning",
+  "category": "trainings",
   "name": "SuperWidget 2000",
   "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
   "technology": "gaming console",
@@ -451,7 +451,7 @@
 }, {
   "id": 46,
   "sku": "sku-46000",
-  "category": "traning",
+  "category": "trainings",
   "name": "Awesome Gizmo",
   "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
   "technology": "smartphone",
