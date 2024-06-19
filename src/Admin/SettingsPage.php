@@ -14,7 +14,7 @@ class SettingsPage {
     public function __construct() {
         add_action('admin_menu', [$this, 'add_plugin_page']);
         add_action('admin_init', [$this, 'register_settings']);
-        add_action('admin_post_' . 'fetch_data_action', [$this, 'fetch_data_action']);
+        add_action('admin_post_' . 'fetch_data_action', function() { $this->fetch_data_action('file'); });
         add_action('admin_notices', [$this, 'admin_notices']);
     }
 
@@ -54,7 +54,7 @@ class SettingsPage {
         echo '<hr />';
 
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
-        // wp_nonce_field('fetch_data_action');
+        wp_nonce_field('fetch_data_action');
         echo '<input type="hidden" name="action" value="fetch_data_action" />';
         submit_button('Fetch data from Mockaroo', 'secondary');
         echo '</form>';
@@ -120,19 +120,27 @@ class SettingsPage {
         return $input;
     }
 
-    public function fetch_data_action() {
+    public function fetch_data_action($source) {
         $data = new Data();
 
-        // check_admin_referer('fetch_data_action');
+        check_admin_referer('fetch_data_action');
         $options = get_option(self::OPTION_NAME);
 
-        $options[self::JSON_DATA_FIELDNAME] = $data->get_sample_data();
+        if ($source === 'file') {
+            $options[self::JSON_DATA_FIELDNAME] = $data->get_sample_data();
+        } else if ($source === 'mockaroo') {
+            // Fetch from Mockaroo
+        } else if ($source === 'csv') {
+            // Load from csv file
+        }
+
         update_option(self::OPTION_NAME, $options);
 
         wp_redirect(
             add_query_arg([
                 'page' => 'better-health',
                 'data_fetched' => 'true',
+                'source' => $source,
             ],
             admin_url('options-general.php')
         ));
