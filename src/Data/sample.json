@@ -1,0 +1,501 @@
+[{
+  "id": 1,
+  "sku": "sku-1000",
+  "category": "design",
+  "name": "Fantastic Widget",
+  "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+  "technology": "smartphone",
+  "sub_technology": "AR/VR",
+  "vendor": "Global Imports",
+  "product_type": "electronics"
+}, {
+  "id": 2,
+  "sku": "sku-2000",
+  "category": "traning",
+  "name": "MegaGadget 3000",
+  "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+  "technology": "smartwatch",
+  "sub_technology": "Cybersecurity",
+  "vendor": "ABC Suppliers",
+  "product_type": "toys"
+}, {
+  "id": 3,
+  "sku": "sku-3000",
+  "category": "design",
+  "name": "Fantastic Widget",
+  "description": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.\n\nDuis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+  "technology": "smartphone",
+  "sub_technology": "Cybersecurity",
+  "vendor": "ABC Suppliers",
+  "product_type": "electronics"
+}, {
+  "id": 4,
+  "sku": "sku-4000",
+  "category": "traning",
+  "name": "Ultimate Gizmo",
+  "description": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.\n\nMaecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.",
+  "technology": "smartwatch",
+  "sub_technology": "AI",
+  "vendor": "Best Buy Co.",
+  "product_type": "electronics"
+}, {
+  "id": 5,
+  "sku": "sku-5000",
+  "category": "assessments",
+  "name": "Incredible Gizmo",
+  "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum.\n\nIn hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
+  "technology": "drone",
+  "sub_technology": "IoT",
+  "vendor": "Best Buy Co.",
+  "product_type": "clothing"
+}, {
+  "id": 6,
+  "sku": "sku-6000",
+  "category": "traning",
+  "name": "MegaGadget 3000",
+  "description": "Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+  "technology": "camera",
+  "sub_technology": "Cybersecurity",
+  "vendor": "ABC Suppliers",
+  "product_type": "home goods"
+}, {
+  "id": 7,
+  "sku": "sku-7000",
+  "category": "advisory",
+  "name": "Incredible Gizmo",
+  "description": "Fusce consequat. Nulla nisl. Nunc nisl.",
+  "technology": "smartwatch",
+  "sub_technology": "AR/VR",
+  "vendor": "XYZ Distributors",
+  "product_type": "toys"
+}, {
+  "id": 8,
+  "sku": "sku-8000",
+  "category": "traning",
+  "name": "MegaGadget 3000",
+  "description": "In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.\n\nAliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+  "technology": "drone",
+  "sub_technology": "AI",
+  "vendor": "ABC Suppliers",
+  "product_type": "electronics"
+}, {
+  "id": 9,
+  "sku": "sku-9000",
+  "category": "design",
+  "name": "Powerful Gadget",
+  "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.\n\nMorbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.",
+  "technology": "smartphone",
+  "sub_technology": "AR/VR",
+  "vendor": "XYZ Distributors",
+  "product_type": "toys"
+}, {
+  "id": 10,
+  "sku": "sku-10000",
+  "category": "implementation",
+  "name": "MegaGizmo X",
+  "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+  "technology": "tablet",
+  "sub_technology": "Cybersecurity",
+  "vendor": "123 Enterprises",
+  "product_type": "electronics"
+}, {
+  "id": 11,
+  "sku": "sku-11000",
+  "category": "assessments",
+  "name": "Fantastic Widget",
+  "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
+  "technology": "tablet",
+  "sub_technology": "AI",
+  "vendor": "Global Imports",
+  "product_type": "sports equipment"
+}, {
+  "id": 12,
+  "sku": "sku-12000",
+  "category": "design",
+  "name": "Fantastic Gadget",
+  "description": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+  "technology": "camera",
+  "sub_technology": "IoT",
+  "vendor": "XYZ Distributors",
+  "product_type": "home goods"
+}, {
+  "id": 13,
+  "sku": "sku-13000",
+  "category": "assessments",
+  "name": "MegaGadget 3000",
+  "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.",
+  "technology": "smartphone",
+  "sub_technology": "Cybersecurity",
+  "vendor": "Global Imports",
+  "product_type": "clothing"
+}, {
+  "id": 14,
+  "sku": "sku-14000",
+  "category": "design",
+  "name": "Fantastic Gadget",
+  "description": "Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.\n\nProin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
+  "technology": "smartwatch",
+  "sub_technology": "Blockchain",
+  "vendor": "Global Imports",
+  "product_type": "toys"
+}, {
+  "id": 15,
+  "sku": "sku-15000",
+  "category": "design",
+  "name": "Ultimate Gizmo",
+  "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.\n\nPellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.",
+  "technology": "tablet",
+  "sub_technology": "Cybersecurity",
+  "vendor": "ABC Suppliers",
+  "product_type": "home goods"
+}, {
+  "id": 16,
+  "sku": "sku-16000",
+  "category": "design",
+  "name": "Powerful Gadget",
+  "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+  "technology": "drone",
+  "sub_technology": "AI",
+  "vendor": "Global Imports",
+  "product_type": "electronics"
+}, {
+  "id": 17,
+  "sku": "sku-17000",
+  "category": "design",
+  "name": "Incredible Gizmo",
+  "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+  "technology": "smartwatch",
+  "sub_technology": "AR/VR",
+  "vendor": "Global Imports",
+  "product_type": "clothing"
+}, {
+  "id": 18,
+  "sku": "sku-18000",
+  "category": "support",
+  "name": "Fantastic Gadget",
+  "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+  "technology": "smartwatch",
+  "sub_technology": "AR/VR",
+  "vendor": "Global Imports",
+  "product_type": "sports equipment"
+}, {
+  "id": 19,
+  "sku": "sku-19000",
+  "category": "implementation",
+  "name": "Fantastic Widget",
+  "description": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.",
+  "technology": "laptop",
+  "sub_technology": "IoT",
+  "vendor": "123 Enterprises",
+  "product_type": "sports equipment"
+}, {
+  "id": 20,
+  "sku": "sku-20000",
+  "category": "traning",
+  "name": "Fantastic Gadget",
+  "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.\n\nPhasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum.",
+  "technology": "smartwatch",
+  "sub_technology": "AI",
+  "vendor": "XYZ Distributors",
+  "product_type": "electronics"
+}, {
+  "id": 21,
+  "sku": "sku-21000",
+  "category": "traning",
+  "name": "Incredible Gizmo",
+  "description": "In congue. Etiam justo. Etiam pretium iaculis justo.",
+  "technology": "drone",
+  "sub_technology": "Blockchain",
+  "vendor": "Best Buy Co.",
+  "product_type": "clothing"
+}, {
+  "id": 22,
+  "sku": "sku-22000",
+  "category": "assessments",
+  "name": "Awesome Gizmo",
+  "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.",
+  "technology": "smartphone",
+  "sub_technology": "Cybersecurity",
+  "vendor": "123 Enterprises",
+  "product_type": "clothing"
+}, {
+  "id": 23,
+  "sku": "sku-23000",
+  "category": "design",
+  "name": "Superior Widget",
+  "description": "Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.",
+  "technology": "laptop",
+  "sub_technology": "AI",
+  "vendor": "Global Imports",
+  "product_type": "home goods"
+}, {
+  "id": 24,
+  "sku": "sku-24000",
+  "category": "advisory",
+  "name": "MegaGizmo X",
+  "description": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.",
+  "technology": "drone",
+  "sub_technology": "AI",
+  "vendor": "XYZ Distributors",
+  "product_type": "clothing"
+}, {
+  "id": 25,
+  "sku": "sku-25000",
+  "category": "support",
+  "name": "Incredible Gizmo",
+  "description": "Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.",
+  "technology": "smartphone",
+  "sub_technology": "AR/VR",
+  "vendor": "Best Buy Co.",
+  "product_type": "electronics"
+}, {
+  "id": 26,
+  "sku": "sku-26000",
+  "category": "support",
+  "name": "Awesome Gizmo",
+  "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+  "technology": "smartwatch",
+  "sub_technology": "Cybersecurity",
+  "vendor": "Global Imports",
+  "product_type": "toys"
+}, {
+  "id": 27,
+  "sku": "sku-27000",
+  "category": "implementation",
+  "name": "Fantastic Widget",
+  "description": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.\n\nCras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+  "technology": "camera",
+  "sub_technology": "Blockchain",
+  "vendor": "XYZ Distributors",
+  "product_type": "clothing"
+}, {
+  "id": 28,
+  "sku": "sku-28000",
+  "category": "advisory",
+  "name": "Ultimate Gizmo",
+  "description": "Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.",
+  "technology": "tablet",
+  "sub_technology": "Blockchain",
+  "vendor": "XYZ Distributors",
+  "product_type": "electronics"
+}, {
+  "id": 29,
+  "sku": "sku-29000",
+  "category": "traning",
+  "name": "Awesome Gizmo",
+  "description": "Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+  "technology": "drone",
+  "sub_technology": "IoT",
+  "vendor": "XYZ Distributors",
+  "product_type": "toys"
+}, {
+  "id": 30,
+  "sku": "sku-30000",
+  "category": "design",
+  "name": "Ultimate Gizmo",
+  "description": "Sed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+  "technology": "smartwatch",
+  "sub_technology": "Cybersecurity",
+  "vendor": "ABC Suppliers",
+  "product_type": "sports equipment"
+}, {
+  "id": 31,
+  "sku": "sku-31000",
+  "category": "support",
+  "name": "Superior Widget",
+  "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+  "technology": "laptop",
+  "sub_technology": "Blockchain",
+  "vendor": "ABC Suppliers",
+  "product_type": "electronics"
+}, {
+  "id": 32,
+  "sku": "sku-32000",
+  "category": "assessments",
+  "name": "Fantastic Widget",
+  "description": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.\n\nNulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
+  "technology": "laptop",
+  "sub_technology": "IoT",
+  "vendor": "123 Enterprises",
+  "product_type": "toys"
+}, {
+  "id": 33,
+  "sku": "sku-33000",
+  "category": "support",
+  "name": "Powerful Gadget",
+  "description": "Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.\n\nSed sagittis. Nam congue, risus semper porta volutpat, quam pede lobortis ligula, sit amet eleifend pede libero quis orci. Nullam molestie nibh in lectus.",
+  "technology": "tablet",
+  "sub_technology": "IoT",
+  "vendor": "Best Buy Co.",
+  "product_type": "sports equipment"
+}, {
+  "id": 34,
+  "sku": "sku-34000",
+  "category": "implementation",
+  "name": "Awesome Gizmo",
+  "description": "Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.\n\nPraesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.",
+  "technology": "tablet",
+  "sub_technology": "AI",
+  "vendor": "123 Enterprises",
+  "product_type": "clothing"
+}, {
+  "id": 35,
+  "sku": "sku-35000",
+  "category": "advisory",
+  "name": "Incredible Gizmo",
+  "description": "Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+  "technology": "drone",
+  "sub_technology": "IoT",
+  "vendor": "Global Imports",
+  "product_type": "electronics"
+}, {
+  "id": 36,
+  "sku": "sku-36000",
+  "category": "design",
+  "name": "Fantastic Widget",
+  "description": "Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.",
+  "technology": "smartwatch",
+  "sub_technology": "Cybersecurity",
+  "vendor": "123 Enterprises",
+  "product_type": "home goods"
+}, {
+  "id": 37,
+  "sku": "sku-37000",
+  "category": "advisory",
+  "name": "Fantastic Widget",
+  "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
+  "technology": "drone",
+  "sub_technology": "AR/VR",
+  "vendor": "Global Imports",
+  "product_type": "sports equipment"
+}, {
+  "id": 38,
+  "sku": "sku-38000",
+  "category": "assessments",
+  "name": "Incredible Gizmo",
+  "description": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
+  "technology": "tablet",
+  "sub_technology": "AI",
+  "vendor": "Best Buy Co.",
+  "product_type": "toys"
+}, {
+  "id": 39,
+  "sku": "sku-39000",
+  "category": "implementation",
+  "name": "Fantastic Gadget",
+  "description": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.",
+  "technology": "drone",
+  "sub_technology": "Cybersecurity",
+  "vendor": "Global Imports",
+  "product_type": "sports equipment"
+}, {
+  "id": 40,
+  "sku": "sku-40000",
+  "category": "design",
+  "name": "SuperWidget 2000",
+  "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin risus. Praesent lectus.\n\nVestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+  "technology": "tablet",
+  "sub_technology": "Cybersecurity",
+  "vendor": "Best Buy Co.",
+  "product_type": "toys"
+}, {
+  "id": 41,
+  "sku": "sku-41000",
+  "category": "support",
+  "name": "Awesome Gizmo",
+  "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
+  "technology": "gaming console",
+  "sub_technology": "AR/VR",
+  "vendor": "Global Imports",
+  "product_type": "clothing"
+}, {
+  "id": 42,
+  "sku": "sku-42000",
+  "category": "traning",
+  "name": "SuperWidget 2000",
+  "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis.",
+  "technology": "gaming console",
+  "sub_technology": "AR/VR",
+  "vendor": "ABC Suppliers",
+  "product_type": "home goods"
+}, {
+  "id": 43,
+  "sku": "sku-43000",
+  "category": "advisory",
+  "name": "Powerful Gadget",
+  "description": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
+  "technology": "tablet",
+  "sub_technology": "AR/VR",
+  "vendor": "123 Enterprises",
+  "product_type": "sports equipment"
+}, {
+  "id": 44,
+  "sku": "sku-44000",
+  "category": "assessments",
+  "name": "Awesome Gizmo",
+  "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.",
+  "technology": "smartphone",
+  "sub_technology": "Blockchain",
+  "vendor": "Best Buy Co.",
+  "product_type": "sports equipment"
+}, {
+  "id": 45,
+  "sku": "sku-45000",
+  "category": "support",
+  "name": "Superior Widget",
+  "description": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+  "technology": "drone",
+  "sub_technology": "AR/VR",
+  "vendor": "Global Imports",
+  "product_type": "sports equipment"
+}, {
+  "id": 46,
+  "sku": "sku-46000",
+  "category": "traning",
+  "name": "Awesome Gizmo",
+  "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.",
+  "technology": "smartphone",
+  "sub_technology": "AI",
+  "vendor": "123 Enterprises",
+  "product_type": "clothing"
+}, {
+  "id": 47,
+  "sku": "sku-47000",
+  "category": "advisory",
+  "name": "Superior Widget",
+  "description": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.",
+  "technology": "tablet",
+  "sub_technology": "Blockchain",
+  "vendor": "XYZ Distributors",
+  "product_type": "electronics"
+}, {
+  "id": 48,
+  "sku": "sku-48000",
+  "category": "implementation",
+  "name": "MegaGadget 3000",
+  "description": "Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
+  "technology": "tablet",
+  "sub_technology": "IoT",
+  "vendor": "ABC Suppliers",
+  "product_type": "home goods"
+}, {
+  "id": 49,
+  "sku": "sku-49000",
+  "category": "assessments",
+  "name": "Ultimate Gizmo",
+  "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.",
+  "technology": "drone",
+  "sub_technology": "Cybersecurity",
+  "vendor": "Best Buy Co.",
+  "product_type": "clothing"
+}, {
+  "id": 50,
+  "sku": "sku-50000",
+  "category": "implementation",
+  "name": "SuperWidget 2000",
+  "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
+  "technology": "smartphone",
+  "sub_technology": "Cybersecurity",
+  "vendor": "Global Imports",
+  "product_type": "toys"
+}]
