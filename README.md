@@ -1,5 +1,6 @@
 # Better Health Plugin
 ![image](https://github.com/blitspace/exam__doubleyolk__better-health-test/assets/167638196/59ca6d93-11ef-4d6e-b7d7-fa962306146f)
+![image](https://github.com/blitspace/better-health-test/assets/167638196/4026415e-778d-4b1d-bd1f-1b2d54313ee6)
 
 ## Description
 ### Plugin Overview:
