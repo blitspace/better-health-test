@@ -52,6 +52,13 @@ class Shortcode {
 
     public function render_shortcode($atts, $content = null) {
         $data = get_option(SettingsPage::OPTION_NAME)[SettingsPage::JSON_DATA_FIELDNAME];
+        $data = apply_filters('betterhealth_shortcode_data', $data);
+
+        $technology_options = apply_filters('betterhealth_technology_options', $this->get_technology_options());
+        $sub_technology_options = apply_filters('betterhealth_sub_technology_options', $this->get_sub_technology_options());
+        $vendor_options = apply_filters('betterhealth_vendor_options', $this->get_vendor_options());
+        $product_type_options = apply_filters('betterhealth_product_type_options', $this->get_product_type_options());
+
 
         return '<section>'
             // . '<pre class="text-sm">' . $data . '</pre>'
@@ -60,10 +67,10 @@ class Shortcode {
             . 'window.bh = {};'
             // . 'window.bh.data = ' . $this->raw_data . ';'
             . 'window.bh.data = ' . $data . ';'
-            . 'window.bh.technologyOptions = ' . json_encode($this->get_technology_options()) . ';'
-            . 'window.bh.subTechnologyOptions = ' . json_encode($this->get_sub_technology_options()) . ';'
-            . 'window.bh.vendorOptions = ' . json_encode($this->get_vendor_options()) . ';'
-            . 'window.bh.productTypeOptions = ' . json_encode($this->get_product_type_options()) . ';'
+            . 'window.bh.technologyOptions = '     . json_encode($technology_options)     . ';'
+            . 'window.bh.subTechnologyOptions = '  . json_encode($sub_technology_options) . ';'
+            . 'window.bh.vendorOptions = '         . json_encode($vendor_options)         . ';'
+            . 'window.bh.productTypeOptions = '    . json_encode($product_type_options)   . ';'
             . '</script>'
             . '</section>';
     }
