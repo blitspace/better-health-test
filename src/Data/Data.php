@@ -4,6 +4,7 @@ namespace BetterHealth\Data;
 
 class Data {
     const SAMPLE_DATA_PATH = './sample.json';
+    const SAMPLE_CSV_DATA_PATH = './sample.csv';
     const URL = 'https://my.api.mockaroo.com/better_health.json';
     const KEY = 'de6560a0';
 

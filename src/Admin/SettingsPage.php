@@ -41,8 +41,8 @@ class SettingsPage {
     public function create_admin_page() {
         echo '<div class="wrap">';
         echo '<h1>Better Health Settings</h1>';
-        echo '<h2>How to Use</h2>';
-        echo '<p>On the page editor please use</p>';
+        echo '<h2>HOW TO USE</h2>';
+        echo '<p>On the page editor please use the shortcode below:</p>';
         echo '<p><strong>[' . Shortcode::SHORTCODE . ']</strong></p>';
         echo '<hr />';
         echo '<form method="post" action="options.php">';
@@ -56,13 +56,17 @@ class SettingsPage {
 
         echo '<hr />';
 
-        echo "<h2>Get data from sample file / Fetch from Mockaroo</h2>";
+        echo "<h2>Get data from sample file</h2>";
+        echo '<p><strong>Source:</strong> ' . plugin_dir_path(__FILE__) . Data::SAMPLE_DATA_PATH . '</p>';
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         wp_nonce_field('fetch_data_action');
         echo '<input type="hidden" name="action" value="fetch_data_action_file" />';
         submit_button('Get data from sample file', 'secondary');
         echo '</form>';
 
+        echo "<h2>Fetch from Mockaroo</h2>";
+        echo '<p><strong>Try in browser:</strong> https://my.api.mockaroo.com/better_health.json?key=de6560a0</p>';
+        echo '<p><strong>Try with cURL:</strong> curl -H "X-API-Key: de6560a0" https://my.api.mockaroo.com/better_health.json</p>';
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         wp_nonce_field('fetch_data_action');
         echo '<input type="hidden" name="action" value="fetch_data_action_mockaroo" />';
@@ -72,6 +76,7 @@ class SettingsPage {
         echo '<hr />';
 
         echo "<h2>Upload CSV file</h2>";
+        echo '<p><strong>Sample data can be found at:</strong> ' . plugin_dir_path(__FILE__) . Data::SAMPLE_CSV_DATA_PATH . '</p>';
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '" enctype="multipart/form-data">';
         wp_nonce_field('fetch_data_action');
         echo '<input type="file" name="csv_file" id="csv_file" />';
@@ -82,6 +87,7 @@ class SettingsPage {
         echo '<hr />';
 
         echo "<h2>Download CSV file</h2>";
+        echo '<p><strong>Filename:</strong> better-health-file.csv</p>';
         echo '<form method="post" action="' . esc_url(admin_url('admin-post.php')) . '">';
         wp_nonce_field('fetch_data_action');
         echo '<input type="hidden" name="action" value="download_csv" />';
