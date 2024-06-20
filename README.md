@@ -15,6 +15,8 @@
 
 ### Sample Data:
 - To demonstrate the functionality, the plugin uses sample data sourced from Mockaroo.
+- The sample json data is also located at `src/Data/sample.json`
+- The sample csv data is also located at `src/Data/sample.csv`
 
 ## Installation
 ```shell
