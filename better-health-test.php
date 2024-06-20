@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: My Plugin
- * Description: A simple WordPress plugin with namespaces
+ * Plugin Name: Better Health Test
+ * Description: Better Health Test
  * Version: 1.0
- * Author: Your Name
+ * Author: Alfred Capacete
  * Text Domain: my-plugin
  */
 
