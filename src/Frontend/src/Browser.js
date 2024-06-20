@@ -39,11 +39,11 @@ const Browser = ({ title, description }) => {
 
             <div className="sticky top-0 border-none p-0 bg-gray-100">
                 <div className="mb-8">
-                    <div className="flex flex-row items-center mb-4">
-                        <div className="basis-2/3">
+                    <div className="flex flex-col md:flex-row items-center mb-4">
+                        <div className="w-full basis-auto md:basis-2/3">
                             <div className="h1 text-2xl font-bold">{title}</div>
                         </div>
-                        <div className="basis-1/3">
+                        <div className="w-full basis-auto md:basis-1/3">
                             <Search />
                         </div>
                     </div>
