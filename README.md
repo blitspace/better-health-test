@@ -68,3 +68,7 @@ Make sure to enable the mbstring extension on php.ini
 extension=mbstring
 ```
 
+```shell
+cd src/test
+../../vendor/bin/phpunit UnitTest.php
+```
