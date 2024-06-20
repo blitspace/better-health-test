@@ -160,11 +160,32 @@ class SettingsPage {
         } else if ($source === 'mockaroo') {
             $options[self::JSON_DATA_FIELDNAME] = $data->do_curl();
         } else if ($source === 'csv') {
-            if (isset($_POST['import_csv'])) {
-                $uploaded_file = $_FILES['csv_file']['tmp_name'];
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                error_log('CSV upload');
+                error_log(print_r($_FILES, true));
+                if (isset($_FILES['csv_file']) && $_FILES['csv_file']['error'] === UPLOAD_ERR_OK) {
+                    if (isset($_POST['import_csv'])) {
+                        $uploaded_file = $_FILES['csv_file']['tmp_name'];
 
-                $options[self::JSON_DATA_FIELDNAME]
-                    = json_encode($data->parse_csv($uploaded_file));
+                        $options[self::JSON_DATA_FIELDNAME]
+                            = json_encode($data->parse_csv($uploaded_file));
+                    }
+                } else {
+                    error_log('Error uploading file');
+                    error_log($_FILES);
+
+                    wp_redirect(
+                        add_query_arg([
+                            'page' => 'better-health',
+                            'data_fetched' => 'false',
+                            'source' => $source,
+                            'error' => 'Error uploading file',
+                        ],
+                        admin_url('options-general.php')
+                    ));
+
+                    exit();
+                }
             }
         }
 
@@ -183,8 +204,6 @@ class SettingsPage {
     }
 
     public function download_csv() {
-        error_log('Download csv');
-
         $options = get_option(self::OPTION_NAME);
         $data = $options[self::JSON_DATA_FIELDNAME];
 
@@ -201,8 +220,6 @@ class SettingsPage {
         }
 
         fclose($file);
-
-        error_log(print_r($data, true));
 
         $csv_content = ob_get_clean();
 

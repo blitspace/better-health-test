@@ -61,13 +61,14 @@ class Data {
         foreach ($csv_array as $row) {
             $assoc_row = [];
             foreach ($header as $index => $column_name) {
-                $assoc_row[$column_name] = $row[$index];
+                if (isset($row[$index])) {
+                    $assoc_row[$column_name] = $row[$index];
+                } else {
+                    error_log('Missing column (' . __FILE__ . ':' . __LINE__ . '): '. $column_name);
+                }
             }
             $assoc_array[] = $assoc_row;
         }
-
-        error_log('---' . print_r(json_encode($header), true));
-        error_log('---' . print_r(json_encode($assoc_array), true));
 
         return $assoc_array;
     }
