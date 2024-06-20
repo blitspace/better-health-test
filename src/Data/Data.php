@@ -10,10 +10,10 @@ class Data {
 
     private $data = [];
 
-    public function __construct() {
-        $this->data = $this->get_sample_data();
-
-        // $this->do_curl();
+    public function __construct($preload = True) {
+        if ($preload) {
+            $this->data = $this->get_sample_data();
+        }
     }
 
     public function get_data() {
