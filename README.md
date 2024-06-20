@@ -54,12 +54,28 @@ betterhealth_shortcode_data
 
 ### Other filters:
 
-To modify dropdown options:
+#### To modify dropdown options:
 ```
 betterhealth_technology_options
 betterhealth_sub_technology_options
 betterhealth_vendor_options
 betterhealth_product_type_options
+```
+
+#### Sample filter hook:
+```php
+add_filter('betterhealth_vendor_options', function($options) {
+	$new_options = [];
+
+	foreach($options as $row) {
+		$new_options[] = [
+			'label' => '[updated] ' . $row['label'],
+			'value' => $row['label'],
+		];
+	}
+
+	return $new_options;
+});
 ```
 
 ## Test
