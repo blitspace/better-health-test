@@ -30,7 +30,7 @@ const Filters = () => {
     const productTypeOptions = context.productTypeOptions;
 
     return (
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-row gap-4 flex-wrap">
             <Filter
                 name="tech"
                 prompt="Technology"
