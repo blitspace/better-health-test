@@ -16,7 +16,9 @@ const Browser = ({ title, description }) => {
                 || item.category.toLowerCase().includes(dataContext.activeCat.toLowerCase());
             const textFilter = dataContext.textFilter === '' || (
                 item.name.toLowerCase().includes(dataContext.textFilter.toLowerCase())
-                    || item.description.toLowerCase().includes(dataContext.textFilter.toLowerCase())
+                    || item.sku.toLowerCase().includes(dataContext.textFilter.toLowerCase()
+                    || item.description.toLowerCase().includes(dataContext.textFilter.toLowerCase()
+                ))
             );
 
             const technologyFilter = dataContext.activeTechnologyFilter === ''
