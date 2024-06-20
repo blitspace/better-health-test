@@ -9,7 +9,12 @@ const Filter = ({ name, prompt, options = [], onChange }) => {
             <option value="">-- { prompt } --</option>
             { options.map((item, idx) => {
                 return (
-                    <option key={idx} value={normalizeText(item)}>{ capitalizeFirstLetter(item) }</option>
+                    <option
+                        key={idx}
+                        value={normalizeText(item.value)}
+                    >
+                        {capitalizeFirstLetter(item.label)}
+                    </option>
                 );
             })}
         </select>

@@ -50,18 +50,32 @@ class Shortcode {
         return $this->get_unique_options('product_type');
     }
 
+    private function options_array_to_assoc_array($options) {
+        $assoc_array = [];
+
+        foreach($options as $option) {
+            $assoc_array[] = [
+                'label' => $option,
+                'value' => $option
+            ];
+        }
+
+        return $assoc_array;
+    }
+
     public function render_shortcode($atts, $content = null) {
         $data = get_option(SettingsPage::OPTION_NAME)[SettingsPage::JSON_DATA_FIELDNAME];
         $data = apply_filters('betterhealth_shortcode_data', $data);
 
-        $technology_options = apply_filters('betterhealth_technology_options', $this->get_technology_options());
-        $sub_technology_options = apply_filters('betterhealth_sub_technology_options', $this->get_sub_technology_options());
-        $vendor_options = apply_filters('betterhealth_vendor_options', $this->get_vendor_options());
-        $product_type_options = apply_filters('betterhealth_product_type_options', $this->get_product_type_options());
+        $technology_options = apply_filters('betterhealth_technology_options', $this->options_array_to_assoc_array($this->get_technology_options()));
+        $sub_technology_options = apply_filters('betterhealth_sub_technology_options', $this->options_array_to_assoc_array($this->get_sub_technology_options()));
+        $vendor_options = apply_filters('betterhealth_vendor_options', $this->options_array_to_assoc_array($this->get_vendor_options()));
+        $product_type_options = apply_filters('betterhealth_product_type_options', $this->options_array_to_assoc_array($this->get_product_type_options()));
 
+        $d = print_r($this->options_array_to_assoc_array($technology_options), true);
 
         return '<section>'
-            // . '<pre class="text-sm">' . $data . '</pre>'
+            // . '<pre class="text-sm">' . $d . '</pre>'
             . '<div id="betterhealth-react-app"></div>'
             . '<script>'
             . 'window.bh = {};'
