@@ -20,7 +20,7 @@
 cd wp-content/plugins
 
 # It is important to add the directory parameter to match the plugin name
-git clone git@github.com:blitspace/exam__doubleyolk__better-health-test.git better-health-test
+git clone git@github.com:blitspace/better-health-test.git better-health-test
 ```
 
 ## Setup
