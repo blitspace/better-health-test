@@ -36,7 +36,7 @@ npm run build
 composer install
 ```
 
-On the admin page, click `Get data from sample file` to populate the JSON data text field. This also automatically saves the data.
+On the admin page, click `Get data from sample file` to populate the JSON data text field. **This also automatically saves the data, no need to click on `Save Changes`**.
 
 ## How to use
 
