@@ -53,3 +53,18 @@ betterhealth_sub_technology_options
 betterhealth_vendor_options
 betterhealth_product_type_options
 ```
+
+## Test
+
+This uses PHPUnit to run the tests. Php unit is not committed on this repo as the plugin size will increase.
+
+### Installation
+```
+composer install
+```
+
+Make sure to enable the mbstring extension on php.ini
+```ini
+extension=mbstring
+```
+
